@@ -1,185 +1,335 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
 <script src="https://use.fontawesome.com/467031236f.js"></script>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 
 <!DOCTYPE html>
+<style>
+	html, body {
+		margin: -40;
+		padding: 0;
+		overflow-x: hidden;
+	}
 
+	h1, h2, h3, h4, p {
+		font-family: 'Lato', sans-serif;
+	}
+
+	h1 {
+		font-size: 50px;
+	}
+
+	#timelineHeader {
+		font-size: 2.3vw;
+		float: left;
+		position: absolute;
+		left: 1.5%;
+		top: 109%;
+	}
+
+	.container-fluid {
+		padding-right: 0;
+		padding-left: 0;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.background {
+		background-image: url("website_bg.jpg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		filter: blur(0.79px);
+		filter: opacity(65%);
+		display: block;
+		margin: auto;
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+
+	#landingInfo {
+		position: absolute;
+		width: 100%;
+		top: 32%;
+		text-align: center;
+	}
+
+	#name {
+		color: black;
+	}
+
+	#description {
+		color: black;
+	}
+
+	li {
+		font-size: 110%;
+	}
+
+	.timeline {
+		background-color: white;
+	}
+
+	.cbp_tmtimeline {
+		margin: 30px 0 0 0;
+		padding: 0;
+		list-style: none;
+		position: relative;
+		left: 0%;
+	} 
+
+	/* The line */
+	.cbp_tmtimeline:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 10px;
+		background: #afdcf8;
+		left: 17%;
+		margin-left: -10px;
+	}
+
+	.cbp_tmtimeline > li {
+		position: relative;
+	}
+
+	/* Right content */
+	.cbp_tmtimeline > li .cbp_tmlabel {
+		font-family: 'Lato', sans-serif;
+		margin: 0 0 15px 20%;
+		background: #107896;
+		color: #fff;
+		padding: 1.3em;
+		line-height: 1.4;
+		position: relative;
+		border-radius: 5px;
+		width: 72%;
+	}
+
+	.cbp_tmtimeline > li .cbp_tmlabel h2 { 
+		font-family: 'Lato', sans-serif;
+		margin-top: -5px;
+		padding: 0 0 5px 0;
+		border-bottom: 1px solid rgba(255,255,255,0.4);
+	}
+
+	/* The triangle */
+	.cbp_tmtimeline > li .cbp_tmlabel:after {
+		right: 100%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-right-color: #107896;
+		border-width: 10px;
+		top: 10px;
+	}
+
+	/* The icons */
+	.cbp_tmtimeline > li .cbp_tmicon {
+		width: 40px;
+		height: 40px;
+		font-family: 'ecoico';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		font-size: 1.4em;
+		line-height: 40px;
+		-webkit-font-smoothing: antialiased;
+		position: absolute;
+		background: #107896;
+		border-radius: 50%;
+		box-shadow: 0 0 0 8px #afdcf8;
+		text-align: center;
+		left: 17%;
+		top: 0;
+		margin: 0 0 0 -25px;
+	}
+
+	#date {
+		position: relative;
+		float: right;
+		top: 0%;
+		font-family: 'Lato', sans-serif;
+		font-size: 1.15vw;
+		color: #107896;
+		z-index: 100;
+		left: -85%;
+	}
+
+	#dateContent {
+		font-family: 'Lato', sans-serif;
+		font-size: 1.2vw;
+		display: none;
+	}
+
+	#profilePicture {
+		position: relative;
+		float: left;
+		left: 20%;
+		width: 30%;
+	}
+
+	.profileBorder {
+		border-radius: 10%;
+		border-width: 3px;
+		border-style: solid;
+		border-color: #C0C0C0;
+	}
+
+	#aboutMeTitle {
+		padding-top: 10px;
+		text-align: center;
+	}
+
+	.downloadButton {
+		color: black;
+		background-color: transparent;
+		border-style: solid;
+		border-width: 2px;
+		border-color: black
+	}
+
+	#aboutMeDescription {
+		position: relative;
+		left: -12%;	
+	}
+
+	#workExperienceTitle {
+		padding-top: 10px;
+		text-align: center;
+	}
+
+	#projectsTitle {
+		padding-top: 20px;
+		text-align: center;
+	}
+
+	#socialMedia {
+		position: relative;
+		top: 100%;
+	}
+
+	@media screen and (min-width: 0px) and (max-width: 1552px) {
+		#date {
+			display: none;
+		}
+
+		#dateContent {
+			display: block;
+		}
+
+		.background {
+			max-height: 50%;
+		}
+	}
+</style>
 
 <html>
 <head>
 	<title>
 		William Wang - UBC Computer Science
 	</title>
-	<style>
-		#homeButton {
-			position: fixed;
-			bottom: 8px;
-			right: 16px;
-			float: right;
-			color: #111;
-		}
-
-		#background {
-			margin-top: -23px;
-			width: 100%;
-			background-image: url("bg.jpg") ;
-			background-size: 100%;
-			height: 400px;
-		}
-
-		#profilePicture {
-			position: relative;
-			width: 300px;
-			left: 300px;
-			top: 30px;
-			float: left;
-		}
-
-		.profileBorder {
-			border-radius: 50%;
-			border-width: 3px;
-			border-style: solid;
-			border-color: #C0C0C0;
-		}
-
-		#aboutText {
-			position: relative;
-			top: 70px;
-			left: 350px;
-		}
-
-		#aboutIcon {
-			position: relative;
-			top: -86px;
-			left: 230px;
-		}
-
-		h1 {
-			font-family: Trebuchet;
-		}
-		h2, h3 {
-			font-family: Trebuchet;
-		}
-
-		#options {
-			position: relative;
-			left: -127px;
-			display: inline;
-		}
-
-		h4 {
-			font-family: Trebuchet;
-		}
-
-		html, body {
-			width: 100%;
-			height: 100%;
-			margin: 0px;
-			padding: 0px;
-			overflow-x: hidden;
-		}
-
-		#aboutMe {
-			margin-top: -5%;
-			position: relative;
-			top: 100px;
-			left: 44%;
-		}
-
-		#portfolio {
-			position: relative;
-			top: 100px;
-			left: 44%;
-		}
-
-		#aboutMeText {
-			position: relative;
-			top: 85px;
-			left: 23%;
-			margin-bottom: 3%;
-		}
-
-		#underline {
-			position: relative;
-			top: 90px;
-		}
-
-		#portfolioLinks {
-			position: relative;
-			top: 85px;
-			left: 45%;
-		}
-
-		.dwnBtn {
-			color: black;
-			font-family: sans-serif;	
-		}
-
-		#mobileAppTitle {
-			position: relative;
-			top: 100px;
-			left: 42%;
-		}
-
-		hr {
-			border-color: orange;
-		}
-
-	</style>
 </head>
 <body>
 	<div class="container-fluid">
-		<div>
-			<div id="background" id="about">
-				<div >
-					<img class="profileBorder" id="profilePicture" src="http://i1376.photobucket.com/albums/ah27/will_wang97/12471533_1083309218367921_5591302309547488360_o_zpsilspiu1b.jpg" alt="Photo of William Wang"/>
-				</div>
-
-				<div id="aboutText">
-					<h1 style="color: white;"><strong>WILLIAM WANG</strong></h1>
-					<h2 style="color: white;"><strong>UBC COMPUTER SCIENCE | SECOND YEAR</strong></h2>
-					<h4 style="color: white;">A quiet man with big dreams. Pet lover and food enthusiast. Creating my world one line at a time.</h4>
-					<span>
-						<h5 style="color: white;"><i class="glyphicon glyphicon-home"></i> Vancouver, British Columbia</h5>
-						<h5 style="color: white;"><i class="glyphicon glyphicon-earphone"></i> +1 (604)-339-0183</h5>
-						<h5 style="color: white;"><i class="glyphicon glyphicon-envelope"></i> wang.yw.william@gmail.com</h5>
-					</span>
-
-					<div id="aboutIcon">
-						<a href="https://www.linkedin.com/in/williamywang" target="_blank"><i style="color: white" class="fa fa-4x fa-linkedin-square"></i>&nbsp;&nbsp;</a>
-						<a href="https://github.com/willywwang/" target="_blank"><i style="color: white" class="fa fa-4x fa-github-square"></i></a>
-						<div>
-							<a href="Resume.pdf" target="_blank"><button class="dwnBtn btn btn-default"><i class="glyphicon glyphicon-download"></i> Download Resume</button></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="aboutMe">
-				<h2><strong><i class="glyphicon glyphicon-user"></i> ABOUT ME</strong></h2>
-			</div>
-			<div id="underline">
-				<hr/>
-			</div>
-			<div id="aboutMeText">
-				<h4>My name's Will and I'm a second year Computer Science major at UBC. I'm currently working as a Software Developer Intern at EDP <br/>Software. I have been programming for a year now and have developed a unique skillset while strengthening my knowledge of computer <br/>hardware and networking. In my spare time I play on my colliegiate eSports team, try new foods, and have a good laugh with friends.</h4>
-			</div>
-			<div id="portfolio">
-				<h2><strong><i class="glyphicon glyphicon-book"></i> PORTFOLIO</strong></h2>
-			</div>
-			<div id="underline">
-				<hr/>
-			</div>
-			<div id="portfolioLinks">
-				<h3 id="options">Mobile Applications&nbsp;&nbsp;&nbsp;</h3>
-				<h3 id="options">Desktop Applications</h3>
-			</div>
-			<div id="mobileAppTitle">
-				<h2><b><i class="glyphicon glyphicon-phone"></i> Mobile Applications</b></h2>
+		<div class="background">
+			<div id="landingInfo">
+				<h1 id="name"><b>WILLIAM WANG</b></h1>
+				<h2 id="description"><b>UBC COMPUTER SCIENCE</b></h2>
+				<a href="Resume.pdf" target="_blank">
+					<button class="w3-btn w3-round-xlarge downloadButton">
+						<b><i style="color: black" class="glyphicon glyphicon-download"></i>&nbsp;&nbsp;Download Resume</b>
+					</button>
+				</a>
+				<h2></h2>
+				<span id="socialMedia">
+					<a href="https://www.linkedin.com/in/williamywang" target="_blank"><i style="color: black" class="fa fa-4x fa-linkedin-square"></i>&nbsp;&nbsp;</a>
+					<a href="https://github.com/willywwang/" target="_blank"><i style="color: black" class="fa fa-4x fa-github-square"></i></a>
+				</span>
 			</div>
 		</div>
-		<div id="homeButton">
-			<a href="#"><i class="glyphicon glyphicon-home"></i> Back to top</a>
+		<div class="aboutMe">
+			<h1 id="aboutMeTitle"><b>ABOUT ME</b></h1>
+			<hr/>
+			<div class="row">
+				<span id="aboutMeMaterial">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-4">
+						<img class="profileBorder" id="profilePicture" src="http://i1376.photobucket.com/albums/ah27/will_wang97/12471533_1083309218367921_5591302309547488360_o_zpsilspiu1b.jpg" alt="Photo of William Wang"/>
+					</div>
+					<div class="col-xs-6" id="aboutMeDescription">
+						<h3>My name's Will and I'm a second year Computer Science major at UBC. I currently work as a Software Developer Intern at EDP Software. I thrive in intense, fast-paced work environments and enjoy collaborating with others to create innovative products. I constantly strive to create an enjoyable user experience while fine-tuning the inner workings of my projects. In my spare time I'm typically trying new foods and having a good laugh with friends.</h3>
+					</div>
+
+				</span>
+			</div>
+		</div>
+		<div class="timeline">
+			<h1 id="workExperienceTitle"><b>WORK EXPERIENCE</b></h1>
+			<hr/>
+			<ul class="cbp_tmtimeline">
+				<li>
+					<span id="date">Jan 2016 - Present</span>
+					<div class="cbp_tmicon"></div>
+					<div class="cbp_tmlabel">
+						<h2>EDP Software - Software Developer Intern</h2>
+						<h2 id="dateContent">Jan 2016 - Present</h2>
+						<ul style="list-style-type: square">
+						</ul>
+						<h2 style="padding-top: 10px"></h2>
+						Technologies used: HTML, CSS, C#, AngularJS, ASP.Net, TFS, Agile, Scrum
+					</div>
+				</li>
+				<li>
+					<span id="date">Feb 2016 - Aug 2016</span>
+					<div class="cbp_tmicon"></div>
+					<div class="cbp_tmlabel">
+						<h2>Affinity Managed IT - Support Technician</h2>
+						<h2 id="dateContent">Feb 2016 - Aug 2016</h2>
+						<ul style="list-style-type: square">
+							<li>Provided remote and phone assistance for clients for varied Windows environments</li>
+							<li>Setup, repaired, and upgraded desktop for clients and connected them to server</li>
+							<li>Troubleshot mobile and tablet devices and their software</li>
+						</ul>
+						<h2 style="padding-top: 10px"></h2>
+						Technologies used: Windows, Android, IOS, LogMeIn
+					</div>
+				</li>	
+				<li>
+					<span id="date">May 2013 - Aug 2016</span>
+					<div class="cbp_tmicon"></div>
+					<div class="cbp_tmlabel">
+						<h2>Kumon - Team Leader</h2>
+						<h2 id="dateContent">May 2013 - Aug 2016</h2>
+						<ul style="list-style-type: square">
+							<li>Managed classroom and allocated duties accordingly</li>
+							<li>Trained new employees and tutored around 60 students from kindergarten to grade 12 weekly in math and reading</li>
+							<li>Scheduled and distributed students' work for future weeks</li>
+							<li>Tracked the progress of 200+ students monthly and created a report regarding each students' progress</li>
+						</ul>
+						<h2 style="padding-top: 10px"></h2>
+						Technologies used: CMS, Microsoft Office
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="Projects">
+			<h1 id="projectsTitle"><b>PROJECTS</b></h1>
+			<hr/>
+			<h1 style="font-size:45px;text-align: center">IN PROGRESS</h1>
+			<br>
+			<br>
 		</div>
 	</div>
+</div>
 </body>
 </html>
