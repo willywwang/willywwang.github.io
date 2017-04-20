@@ -1,6 +1,6 @@
 var website = angular.module('website', ['ui.bootstrap']);
 
-website.controller('web-controller', function($scope, $interval, $modal) {
+website.controller('web-controller', function($scope, $interval, $uibModal) {
 	// set defaults
 	$scope.androidProjectShow="true";
 	$scope.pythonProjectShow="true";
@@ -14,7 +14,7 @@ website.controller('web-controller', function($scope, $interval, $modal) {
 
 	// open android modal
 	$scope.openAndroidModal = function() {
-		var modalInstance = $modal.open({
+		var modalInstance = $uibModal.open({
 			ariaLabelledBy: 'modal-title',
 			ariaDescribedBy: 'modal-body',
 			templateUrl: 'android-modal.html',
@@ -24,7 +24,7 @@ website.controller('web-controller', function($scope, $interval, $modal) {
 
 	// open python modal
 	$scope.openPythonModal = function() {
-		var modalInstance = $modal.open({
+		var modalInstance = $uibModal.open({
 			ariaLabelledBy: 'modal-title',
 			ariaDescribedBy: 'modal-body',
 			templateUrl: 'python-modal.html',
@@ -34,7 +34,7 @@ website.controller('web-controller', function($scope, $interval, $modal) {
 
 	// open web modal
 	$scope.openWebModal = function() {
-		var modalInstance = $modal.open({
+		var modalInstance = $uibModal.open({
 			ariaLabelledBy: 'modal-title',
 			ariaDescribedBy: 'modal-body',
 			templateUrl: 'web-modal.html',
@@ -74,9 +74,9 @@ website.controller('web-controller', function($scope, $interval, $modal) {
 	$interval(rotateWords, 1000);
 });
 
-website.controller('modal-controller', function($scope, $rootScope, $modalInstance) {
+website.controller('modal-controller', function($scope, $rootScope, $uibModalInstance) {
 	$scope.close = function() {
 		$rootScope.$broadcast('modal-closed');
-		$modalInstance.dismiss('close');
+		$uibModalInstance.dismiss('close');
 	}
 });
