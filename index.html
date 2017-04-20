@@ -1,65 +1,344 @@
+	<!-- Third party dependencies --> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-
 	<script src="https://use.fontawesome.com/467031236f.js"></script>
+	<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- CSS and AngularJS files -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/main.js"></script>
+	<script src="js/jquery.js"></script>
 
 	<!DOCTYPE html>
 	<html>
 	<head>
+		<link rel="shortcut icon" type="image/x-icon" href="assets/website-logo.jpg"/>
 		<title>
 			William Wang - UBC Computer Science
 		</title>
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container-fluid" ng-app="website" ng-controller="web-controller">
 			<div class="background">
-				<div id="landingInfo">
-					<h1 id="name"><b>WILLIAM WANG</b></h1>
-					<h2 id="description"><b>UBC COMPUTER SCIENCE</b></h2>
-					<a href="assets/Resume.pdf" target="_blank">
-						<button class="w3-btn w3-round-xlarge downloadButton">
-							<b><i style="color: black" class="glyphicon glyphicon-download"></i>&nbsp;&nbsp;Download Resume</b>
-						</button>
-					</a>
-					<h2></h2>
-					<span id="socialMedia">
-						<a href="https://www.linkedin.com/in/williamywang" target="_blank"><i style="color: black" class="fa fa-4x fa-linkedin-square"></i>&nbsp;&nbsp;</a>
-						<a href="https://github.com/willywwang/" target="_blank"><i style="color: black" class="fa fa-4x fa-github-square"></i></a>
-					</div>
+				<div class="navigationIcon">
+					<button ng-click="openMobileMenu()" class="mobileMenuButton">
+						<i style="color: black" class="glyphicon glyphicon-menu-hamburger"></i>
+					</button>
 				</div>
-				<div class="aboutMe">
-					<h1 id="aboutMeTitle"><b>ABOUT ME</b></h1>
-					<hr/>
-					<div class="row">
-						<span id="aboutMeMaterial">
-							<div class="col-xs-1"></div>
-							<div class="col-xs-4">
-								<img class="profileBorder" id="profilePicture" src="http://i1376.photobucket.com/albums/ah27/will_wang97/12471533_1083309218367921_5591302309547488360_o_zpsilspiu1b.jpg" alt="Photo of William Wang"/>
-							</div>
-							<div class="col-xs-6" id="aboutMeDescription">
-								<h3>My name's Will and I'm a second year Computer Science major at UBC. I currently work as a Software Developer Intern at EDP Software. I thrive in intense, fast-paced work environments and enjoy collaborating with others to create innovative products. I constantly strive to create an enjoyable user experience while fine-tuning the inner workings of my projects. In my spare time I'm typically trying new foods and having a good laugh with friends.</h3>
-							</div>
-
+				<div ng-show="mobileMenuClicked" class="navigationMenu">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="#timeline">Experience</a></li> 
+						<li><a href="#contact">Contact</a></li>
+					</div>
+					<div id="navLine"></div>
+					<div class="navigationBar">
+						<ul>
+							<li><a href="index.html">Home</a></li>	
+							<li><a href="about.html">About</a></li>
+							<li><a href="#timeline">Experience</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>	
+					<div id="landingInfo">
+						<h1 id="name">WILLIAM WANG</h1>
+						<h2 id="description">UBC COMPUTER SCIENCE</h2>
+						<h2 id="nouns">{{noun}}</h2>
+						<a href="assets/Resume.pdf" target="_blank">
+							<button class="downloadButton">
+								<i style="color: black" class="glyphicon glyphicon-download"></i>&nbsp;&nbsp;Download Resume
+							</button>
+						</a>
+						<h2></h2>
+						<span id="socialMedia">
+							<a href="https://www.linkedin.com/in/williamywang" target="_blank"><i style="color: black" class="fa fa-4x fa-linkedin-square"></i>&nbsp;&nbsp;</a>
+							<a href="https://github.com/willywwang/" target="_blank"><i style="color: black" class="fa fa-4x fa-github-square"></i></a>
 						</span>
 					</div>
+					<div id="dropdown">
+						<a class="scrollAnimation" href="#scrollArea"><i class="fa fa-4x fa-chevron-circle-down"></i></a>
+					</div>	
 				</div>
+				<div id="scrollArea" class="webGap"></div>
+				<div class="about">
+					<div id="profileBorder">
+						<img id="profileImage" src="assets/profile.jpg" alt="Profile picture">
+					</div>
+					<div id="desktop">
+						<div class="row">
+							<div class="col-xs-2"></div>
+							<div id="fact" class="col-xs-2">
+								<i class="fa fa-4x fa-graduation-cap"></i>
+								<h3 id="factDescription">3rd year at UBC</h3>
+							</div>
+							<div id="fact" class="col-xs-2">
+								<i class="fa fa-4x fa-code"></i>
+								<h3 id="factDescription">8 months as intern</h3>
+							</div>
+							<div id="fact" class="col-xs-2">
+								<i class="fa fa-4x fa-music"></i>
+								<h3 id="factDescription">10 years playing the piano</h3>
+							</div>
+							<div id="fact" class="col-xs-2">
+								<i class="fa fa-4x fa-heart"></i>
+								<h3 id="factDescription">Basketball enthusiast</h3>
+							</div>
+							<div class="col-xs-2"></div>
+						</div>
+					</div>
+					<div id="phone">
+						<div class="row">
+							<div style="padding-left: 50px" id="fact" class="col-xs-3">
+								<i class="fa fa-4x fa-graduation-cap"></i>
+								<h3 id="factDescription">3rd year at UBC</h3>
+							</div>
+							<div id="fact" class="col-xs-3">
+								<i class="fa fa-4x fa-code"></i>
+								<h3 id="factDescription">8 months as intern</h3>
+							</div>
+							<div id="fact" class="col-xs-3">
+								<i class="fa fa-4x fa-music"></i>
+								<h3 id="factDescription">10 years playing the piano</h3>
+							</div>
+							<div id="fact" class="col-xs-3">
+								<i class="fa fa-4x fa-heart"></i>
+								<h3 id="factDescription">Basketball enthusiast</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="webGap"></div>
+				<!-- Desktop View -->
+				<div class="projects">
+					<div class="row">
+						<div id="desktop">
+							<div class="col-xs-1"></div>
+							<div class="col-xs-3">
+								<div id="androidProject">
+									<div class="projectBorder">
+										<img ng-mouseenter="androidProjectShow=false" ng-mouseleave="androidProjectShow=true" id="projectPanel" 
+										src="assets/mindthegap.jpg" alt="Mind the Gap Android Project">
+										<div id="projectPanelInfo" ng-show="androidProjectShow">
+											<h1 ng-mouseenter="androidProjectShow=false" id="panelTitle">Mind the Gap</h1>
+											<h2 ng-mouseenter="androidProjectShow=false" id="panelType">Android Application</h2>
+										</div>
+										<div id="projectPanelButtons" ng-mouseenter="androidProjectShow=false" ng-show="!androidProjectShow">
+											<button id="projectInfoButton" ng-disabled="androidProjectShow" ng-click="openAndroidModal()">
+												<i style="color: black" class="glyphicon glyphicon-info-sign"></i>&nbsp;&nbsp;Learn More
+											</button>
+										</div>
+										<h3 id="panelDate" ng-mouseenter="androidProjectShow=false" ng-show="androidProjectShow">April 2016</h3>
+										<p id="panelHover" ng-mouseenter="androidProjectShow=false" ng-show="androidProjectShow">Click/hover for additional information</p>
+									</div>
+								</div>
+							</div>
+							<!-- Popup for Mind the Gap Project -->
+							<script type="text/ng-template" id="android-modal.html">
+								<div class="modal-header">
+									<h1 class="modal-title" id="modal-title">Mind the Gap - Android Application</h1>
+								</div>
+								<div class="modal-body">
+									<h4 id="modal-body">Java application created in class to track the London Tube in real time by retrieving data from API. Users are informed of position of incoming trains and also of any possible delays occuring in the Tube. 
+										<br/>
+										<br/>
+										Additionally users are able to locate any nearby stations and the application automatically locates any incoming/outgoing trains in the vincinity of the user.
+									</h4>
+								</div>
+								<div class="modal-footer">
+									<button class="btn btn-primary" id="modal-button" type="button" ng-click="close()">Close</button>
+								</div>
+							</script>
+
+							<div class="col-xs-3">
+								<div id="pythonProject">
+									<div class="projectBorder">
+										<img ng-mouseenter="pythonProjectShow=false" ng-mouseleave="pythonProjectShow=true" id="projectPanel" src="assets/battleship.jpg" alt="Battleship Game">
+										<div id="projectPanelInfo" ng-show="pythonProjectShow">
+											<h2 ng-mouseenter="pythonProjectShow=false" id="panelTitle">Battleship</h2>
+											<h3 ng-mouseenter="pythonProjectShow=false" id="panelType">Console Application</h3>
+										</div>
+										<div id="projectPanelButtons" ng-mouseenter="pythonProjectShow=false" ng-show="!pythonProjectShow">
+											<button id="projectInfoButton" ng-disabled="pythonProjectShow" ng-click="openPythonModal()">
+												<i style="color: black" class="glyphicon glyphicon-info-sign"></i>&nbsp;&nbsp;Learn More
+											</button>
+											<br/>
+											<br/>
+											<a href="https://github.com/willywwang/BattleshipGame" target="_blank">
+												<button id="projectInfoButton">
+													<i style="color: black" class="glyphicon glyphicon-new-window"></i>&nbsp;&nbsp;Source Code
+												</button>
+											</a>
+										</div>
+										<h3 id="panelDate" ng-mouseenter="pythonProjectShow=false" ng-show="pythonProjectShow">July 2016</h3>
+										<p id="panelHover" ng-mouseenter="pythonProjectShow=false" ng-show="pythonProjectShow">Click/hover for additional information</p>
+									</div>
+								</div>
+							</div>
+							<!-- Popup for Battleship Project -->
+							<script type="text/ng-template" id="python-modal.html">
+								<div class="modal-header">
+									<h1 class="modal-title" id="modal-title">Battleship - Python Console Game</h1>
+								</div>
+								<div class="modal-body">
+									<h4 id="modal-body">
+										Single player battleship game with an A.I. that makes intelligent decisions. A.I. scans board on turn to choose the optimal position to shoot at as well as being aware of positions that would be impossible to contain a ship.
+										<br/>
+										<br/>
+										Board can be seen at any given time displaying both successful and unsuccessful shot locations on the board and informing the user on any events that occur during the duration of the game. 
+									</h4>
+								</div>
+								<div class="modal-footer">
+									<a href="https://github.com/willywwang/BattleshipGame" target="_blank">
+										<button class="btn btn-success" id="modal-button">
+											<i style="color: black" class="glyphicon glyphicon-info-sign glyphicon-new-window"></i>&nbsp;&nbsp;
+											Source Code
+										</button>
+									</a>
+									<button class="btn btn-primary" type="button" id="modal-button" ng-click="close()">Close</button>
+								</div>
+							</script>
+
+							<div class="col-xs-3">
+								<div id="webProject">
+									<div class="projectBorder">
+										<img ng-mouseenter="webProjectShow=false" ng-mouseleave="webProjectShow=true" id="projectPanel" src="assets/website.jpg" alt="Personal Website">
+										<div id="projectPanelInfo" ng-show="webProjectShow">
+											<h2 ng-mouseenter="webProjectShow=false" id="panelTitle">Website</h2>
+											<h3 ng-mouseenter="webProjectShow=false" id="panelType">Web Project</h3>
+										</div>
+										<div id="projectPanelButtons" ng-mouseenter="webProjectShow=false" ng-show="!webProjectShow">
+											<button id="projectInfoButton" ng-disabled="webProjectShow" ng-click="openWebModal()">
+												<i style="color: black" class="glyphicon glyphicon-info-sign"></i>&nbsp;&nbsp;Learn More
+											</button>
+											<br/>
+											<br/>
+											<a href="https://github.com/willywwang/willywwang.github.io" target="_blank">
+												<button id="projectInfoButton">
+													<i style="color: black" class="glyphicon glyphicon-new-window"></i>&nbsp;&nbsp;Source Code
+												</button>
+											</a>
+										</div>
+										<h3 id="panelDate" ng-mouseenter="webProjectShow=false" ng-show="webProjectShow">April 2017</h3>
+										<p id="panelHover" ng-mouseenter="webProjectShow=false" ng-show="webProjectShow">Click/hover for additional information</p>
+									</div>
+								</div>
+							</div>
+							<!-- Popup for Web Project -->
+							<script type="text/ng-template" id="web-modal.html">
+								<div class="modal-header">
+									<h1 class="modal-title" id="modal-title">Personal Website - Web Project</h1>
+								</div>
+								<div class="modal-body">
+									<h4 id="modal-body">
+										Responsive website powered by AngularJS, JQuery, and Bootstrap. Created in my spare time to sharpen my skills in web development - particularly in front-end design. 
+									</h4>
+								</div>
+								<div class="modal-footer">
+									<a href="https://github.com/willywwang/willywwang.github.io" target="_blank">
+										<button class="btn btn-success" id="modal-button">
+											<i style="color: black" class="glyphicon glyphicon-info-sign glyphicon-new-window"></i>&nbsp;&nbsp;
+											Source Code
+										</button>
+									</a>
+									<button class="btn btn-primary" type="button" ng-click="close()" id="modal-button">Close</button>
+								</div>
+							</script>
+
+							<div class="col-xs-1"></div>
+						</div>
+
+						<!-- Phone View -->
+						<div id="phone">
+							<div class="row">
+								<div class="col-xs-2"></div>
+								<div class="col-xs-6">
+									<div id="webProject">
+										<div class="projectBorder">
+											<img ng-mouseenter="webProjectShow=false" ng-mouseleave="webProjectShow=true" id="projectPanel" src="assets/website.jpg" alt="Personal Website">
+											<div id="webProjectPhonePanelInfo" ng-show="webProjectShow">
+												<h2 ng-mouseenter="webProjectShow=false" id="phonePanelTitle">Website</h2>
+												<h3 ng-mouseenter="webProjectShow=false" id="phonePanelType">Web Project</h3>
+											</div>
+											<div id="webProjectPanelButtons" ng-mouseenter="webProjectShow=false" ng-show="!webProjectShow">
+												<button id="phoneProjectInfoButton" ng-click="openWebModal()">
+													<i style="color: black" class="glyphicon glyphicon-info-sign"></i>&nbsp;&nbsp;Learn More
+												</button>
+												<br/>
+												<br/>
+												<a href="https://github.com/willywwang/willywwang.github.io" target="_blank">
+													<button id="phoneProjectInfoButton">
+														<i style="color: black" class="glyphicon glyphicon-new-window"></i>&nbsp;&nbsp;Source Code
+													</button>
+												</a>
+											</div>
+											<h3 id="webPhonePanelDate" ng-mouseenter="webProjectShow=false" ng-show="webProjectShow">April 2017</h3>
+											<p id="phoneWebPanelHover" ng-mouseenter="webProjectShow=false" ng-show="webProjectShow">Click/hover for additional information</p>
+										</div>
+									</div>
+									<div id="pythonProject">
+										<div class="projectBorder">
+											<img ng-mouseenter="pythonProjectShow=false" ng-mouseleave="pythonProjectShow=true" id="projectPanel" src="assets/battleship.jpg" alt="Battleship Game">
+											<div id="pythonProjectPhonePanelInfo" ng-show="pythonProjectShow">
+												<h2 ng-mouseenter="pythonProjectShow=false" id="phonePanelTitle">Battleship</h2>
+												<h3 ng-mouseenter="pythonProjectShow=false" id="phonePanelType">Python Console Application</h3>
+											</div>
+											<div id="pythonProjectPanelButtons" ng-mouseenter="pythonProjectShow=false" ng-show="!pythonProjectShow">
+												<button id="phoneProjectInfoButton" ng-click="openPythonModal()"><i style="color: black" class="glyphicon glyphicon-info-sign"></i>&nbsp;&nbsp;Learn More
+												</button>
+												<br/>
+												<br/>
+												<a href="https://github.com/willywwang/BattleshipGame" target="_blank">
+													<button id="phoneProjectInfoButton">
+														<i style="color: black" class="glyphicon glyphicon-new-window"></i>&nbsp;&nbsp;Source Code
+													</button>
+												</a>
+											</div>
+											<h3 id="pythonPhonePanelDate" ng-mouseenter="pythonProjectShow=false" ng-show="pythonProjectShow">July 2016</h3>
+											<p id="phonePythonPanelHover" ng-mouseenter="pythonProjectShow=false" ng-show="pythonProjectShow">Click/hover for additional information</p>
+										</div>
+									</div>
+									<div id="androidProject">
+										<div class="projectBorder">
+											<img ng-mouseenter="androidProjectShow=false" ng-mouseleave="androidProjectShow=true" id="projectPanel" 
+											src="assets/mindthegap.jpg" alt="Mind the Gap Android Project">
+											<div id="androidProjectPhonePanelInfo" ng-show="androidProjectShow">
+												<h2 ng-mouseenter="androidProjectShow=false" id="phonePanelTitle">Mind the Gap</h2>
+												<h3 ng-mouseenter="androidProjectShow=false" id="phonePanelType">Android Application</h3>
+											</div>
+											<div id="androidProjectPanelButtons" ng-mouseenter="androidProjectShow=false" ng-show="!androidProjectShow">
+												<button id="phoneProjectInfoButton" ng-click="openAndroidModal()">
+													<i style="color: black" class="glyphicon glyphicon-info-sign"></i>&nbsp;&nbsp;Learn More
+												</button>
+											</div>
+											<h3 id="androidPhonePanelDate" ng-mouseenter="androidProjectShow=false" ng-show="androidProjectShow">April 2016</h3>
+											<p id="phoneAndroidPanelHover" ng-mouseenter="androidProjectShow=false" ng-show="androidProjectShow">Click/hover for additional information</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-3"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="timeline" class="webGap"></div>
 				<div class="timeline">
-					<h1 id="workExperienceTitle"><b>WORK EXPERIENCE</b></h1>
+					<h1 id="experienceTitle">WORK EXPERIENCE</h1>
 					<hr/>
 					<ul class="cbp_tmtimeline">
 						<li>
-							<span id="date">Jan 2016 - Present</span>
+							<span id="date">Jan 2017 - Present</span>
 							<div class="cbp_tmicon"></div>
 							<div class="cbp_tmlabel">
 								<h2>EDP Software - Software Developer Intern</h2>
 								<h2 id="dateContent">Jan 2016 - Present</h2>
 								<ul style="list-style-type: square">
+									<li>Currently working</li>
 								</ul>
-								<h2 style="padding-top: 10px"></h2>
-								Technologies used: HTML, CSS, C#, AngularJS, ASP.Net, TFS, Agile, Scrum
+								<h2 id="technologiesUsed"></h2>
+								Technologies used: HTML, CSS, C#, AngularJS, ASP.Net, TFS, Git, Agile Methodology
 							</div>
 						</li>
 						<li>
@@ -73,8 +352,8 @@
 									<li>Setup, repaired, and upgraded desktop for clients and connected them to server</li>
 									<li>Troubleshot mobile and tablet devices and their software</li>
 								</ul>
-								<h2 style="padding-top: 10px"></h2>
-								Technologies used: Windows, Android, IOS, LogMeIn
+								<h2 id="technologiesUsed"></h2>
+								Technologies used: Windows, Android, IOS
 							</div>
 						</li>	
 						<li>
@@ -89,20 +368,38 @@
 									<li>Scheduled and distributed students' work for future weeks</li>
 									<li>Tracked the progress of 200+ students monthly and created a report regarding each students' progress</li>
 								</ul>
-								<h2 style="padding-top: 10px"></h2>
+								<h2 id="technologiesUsed"></h2>
 								Technologies used: CMS, Microsoft Office
 							</div>
 						</li>
 					</ul>
 				</div>
-				<div class="Projects">
-					<h1 id="projectsTitle"><b>PROJECTS</b></h1>
-					<hr/>
-					<h1 style="font-size:45px;text-align: center">IN PROGRESS</h1>
-					<br>
-					<br>
-				</div>
-			</div>
-		</div>
-	</body>
-	</html>
+				<div class="webGap"></div>
+				<div id="contact" class="contact">
+					<div class="row">
+						<div class="col-xs-3"></div>
+						<div class="col-xs-6">
+							<h1 id="contactTitle">CONTACT ME</h1>
+							<hr/>
+							<h3 id="contactDescription">Not a fan of forms? Send me an e-mail at <b>wang.yw.william@gmail.com</b> and I'll get back to you as soon as possible.</h3>
+							<br/>
+							<form class="contactForm" method="post" action="contact-email.php">
+								<label for="username"><p class="formTitles">Name:</p>
+									<input style="font-weight: normal" type="text" name="username" placeholder="Enter name here" ng-model="user.name" required/></label><br>
+									<label for="email"><p class="formTitles"">E-mail:</p> 
+										<input style="font-weight: normal" type="email" name="email" placeholder="Enter valid email here"" ng-model="user.email" required/></label><br/>
+										<label for="messages" class="formTitles"> Message: </label>
+										<br/>
+										<textarea type="message" placeholder="Enter message here" name="messages" style="height: 10vw" ng-model="user.message" required/></textarea>
+										<br/>
+										<input type="submit" value="Submit" />
+									</form>
+								</div>
+								<div class="col-xs-1"></div>
+							</div>
+						</div>
+					</div>
+					<div class="webGap"></div>
+					<p id="footer">Copyright &#9400 2017 William Wang. All images belong to their respective owners.</p>
+				</body>
+				</html>

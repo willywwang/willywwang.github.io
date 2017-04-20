@@ -1,5 +1,17 @@
+@font-face
+{
+	font-family: BebasNeueBook;
+	src: url("../assets/fonts/BebasNeueBook.otf");
+}
+
+@font-face
+{
+	font-family: BebasNeueRegular;
+	src: url("../assets/fonts/BebasNeueRegular.otf");
+}
+
 html, body {
-	margin: -40;
+	margin-top: -40;
 	padding: 0;
 	overflow-x: hidden;
 }
@@ -9,7 +21,11 @@ h1, h2, h3, h4, p {
 }
 
 h1 {
-	font-size: 50px;
+	font-size: 40px;
+}
+
+i:hover {
+	cursor:pointer;
 }
 
 #timelineHeader {
@@ -32,36 +48,468 @@ h1 {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	filter: blur(0.79px);
-	filter: opacity(65%);
 	display: block;
 	margin: auto;
 	width: 100%;
 	height: 100%;
-	position: relative;
+	min-height: 100%;
+	z-index: -1
+}
+
+.experienceBackground {
+	background-image: url("../assets/experience-bg.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: block;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	z-index: -1;
+}
+
+.projects {
+	width: 100%;
+	height: auto;
+}
+
+.webGap {
+	height: 50px;
+}
+
+.contact {
+	width: 100%;
+	height: auto;
+}
+
+.about {
+	width: 100%;
+	height: auto;
 }
 
 #landingInfo {
-	position: absolute;
+	position: relative;
 	width: 100%;
-	top: 32%;
+	top: 33%;
 	text-align: center;
 }
 
 #name {
+	font-family: BebasNeueRegular;
+	line-height: 0.6em;
+	font-size: 7em;
 	color: black;
 }
 
 #description {
+	font-family: BebasNeueRegular;
+	line-height: 0.8em;
+	font-size: 3.7em;
 	color: black;
 }
 
-li {
-	font-size: 110%;
+#nouns {
+	line-height: 0.8em;
+	font-family: BebasNeueRegular;
+	font-size: 3em;
+	color: black;
+}
+
+.mobileMenuButton {
+	background-color: transparent;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	border-radius: 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.navigationBar {
+	position: absolute;
+	top: 0%;
+	left: 5%;
+	height: 40px;
+	width: auto;
+}
+
+.navigationBar ul li {
+	list-style: none;
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px;
+	padding-right: 20px;
+	float: left;
+	font-size: 20px;
+	font-family: 'Lato', sans-serif;
+}
+
+.navigationBar ul li a { 
+	text-decoration: none;
+	color: black;
+}
+.navigationBar ul li a:hover {
+	color: #107896;
+}
+.navigationBar ul li a:active {
+	color: #107896;
+}
+
+.navigationMenu {
+	position: absolute;
+	top: 45px;
+	left: -4%;
+}
+
+.navigationMenu ul li {
+	background-color: black;
+	border-bottom-color: white;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	width: 100vw;
+	min-width: 100%;
+	list-style: none;
+	text-decoration: none;
+	padding: 10px;
+	font-size: 20px;
+	font-family: 'Lato', sans-serif;
+}
+
+.navigationMenu ul li a { 
+	text-decoration: none;
+	color: white;
+}
+.navigationMenu ul li a:hover {
+	color: #6be0d6;
+}
+.navigationMenu ul li a:active {
+	color: #107896;
+}
+
+#navLine {
+	position: absolute;
+	top: 45px;
+	left: 0%;
+	width: 100vw;
+	background-color: black;
+	height: 1px;
+	min-width: 100%;
+}
+
+.navigationIcon {
+	position: absolute;
+	top: 10px;
+	left: 2%;
+	width: auto;
+	display: none;
+}
+
+.scrollAnimation {
+	color: black;
+}
+
+.projectBorder {
+	font-family: 'Lato', sans-serif;
+	margin: 0 0 15px 20%;
+	background-color: #fff;
+	border-color: #107896;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 12px;
+	width: 100%;
+	height: auto;
+	min-width: 100%;
+}
+
+#profileBorder {
+	left: 45%;
+	width: 20vw;
+	height: 20vw;
+	position: relative;
+	top: 18%;
+	left: 40.5%;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+#profileImage {
+	height: auto;
+	width: 100%;
+}
+
+.modal-title {
+	color: black;
+	font-family: BebasNeueRegular;
+}
+
+#fact {
+	text-align: center;
+}
+
+#factDescription {
+	font-family: BebasNeueRegular;
+	font-size: 1.6vw;
+}
+
+#projectPanel {
+	position: relative;
+	opacity: 0.3;
+	min-width: 100%;
+	max-width: 100%;
+	border-radius: 12px;
+}
+
+#panelTitle {
+	font-family: BebasNeueRegular;
+	line-height: 90%;
+	font-size: 4vw;
+}
+
+#phonePanelTitle {
+	font-family: BebasNeueRegular;
+	line-height: 80%;
+	font-size: 8vw;
+}
+
+#panelType {
+	font-family: BebasNeueRegular;
+	line-height: 60%;
+	font-size: 2.3vw;
+}
+
+#phonePanelType {
+	font-family: BebasNeueRegular;
+	line-height: 80%;
+	font-size: 5vw;
+}
+
+#panelDate {
+	font-family: BebasNeueRegular;
+	position: absolute;
+	left: 57%;
+	top: 60%;
+	font-size: 1.8vw;
+}
+
+#panelHover {
+	font-family: BebasNeueRegular;
+	position: absolute;
+	left: 43%;
+	top: 82%;
+	font-size: 1vw;
+	width: 100%;
+}
+
+#phoneWebPanelHover {
+	font-family: BebasNeueRegular;
+	position: absolute;
+	left: 40%;
+	top: 25%;
+	font-size: 2.5vw;
+	width: 100%;
+}
+
+#phonePythonPanelHover {
+	font-family: BebasNeueRegular;
+	position: absolute;
+	left: 40%;
+	top: 58%;
+	font-size: 2.5vw;
+	width: 100%;
+}
+
+#phoneAndroidPanelHover {
+	font-family: BebasNeueRegular;
+	position: absolute;
+	left: 40%;
+	top: 92%;
+	font-size: 2.5vw;
+	width: 100%;
+}
+
+#webPhonePanelDate {
+	font-family: BebasNeueRegular;
+	position: absolute;
+	left: 56%;
+	top: 16.5%;
+	font-size: 4vw;
+}
+
+#pythonPhonePanelDate {
+	font-family: BebasNeueRegular;
+	position: absolute;
+	left: 56%;
+	top: 50.5%;
+	font-size: 4vw;
+}
+
+#androidPhonePanelDate {
+	font-family: BebasNeueRegular;
+	position: absolute;
+	left: 56%;
+	top: 84.5%;
+	font-size: 4vw;
+}
+
+#projectPanelInfo {
+	position: absolute;
+	top: 0%;
+	left: 23%;
+	width: 90%;
+	text-align: center;
+}
+
+#webProjectPhonePanelInfo {
+	position: absolute;
+	top: 3%;
+	left: 23%;
+	width: 90%;
+	text-align: center;	
+}
+
+#pythonProjectPhonePanelInfo {
+	position: absolute;
+	top: 37%;
+	left: 24%;
+	width: 90%;
+	text-align: center;	
+}
+
+#androidProjectPhonePanelInfo {
+	position: absolute;
+	top: 71%;
+	left: 38%;
+	text-align: center;	
+}
+
+#projectPanelButtons {
+	position: absolute;
+	top: 30%;
+	left: 24.5%;
+	width: 90%;
+	text-align: center;
+}
+
+#webProjectPanelButtons {
+	position: absolute;
+	top: 9%;
+	left: 19%;
+	width: 100%;
+	text-align: center;
+}
+
+#pythonProjectPanelButtons {
+	position: absolute;
+	top: 42%;
+	left: 19%;
+	width: 100%;
+	text-align: center;
+}
+
+#androidProjectPanelButtons {
+	position: absolute;
+	top: 79%;
+	left: 19%;
+	width: 100%;
+	text-align: center;
+}
+
+#projectInfoButton {
+	font-family: 'Lato', sans-serif;
+	font-size: 1.1vw;
+	color: black;
+	background-color: transparent;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	border-radius: 50px;
+}
+
+#phoneProjectInfoButton {
+	font-family: 'Lato', sans-serif;
+	font-size: 3vw;	
+	color: black;
+	background-color: transparent;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	border-radius: 50px;
+}
+
+#contactTitle {
+	font-family: BebasNeueRegular;
+	font-size: 4vw;
+	color: black;
+	text-align: center;
+}
+
+#aboutTitle {
+	font-family: BebasNeueRegular;
+	font-size: 4vw;
+	color: black;
+	text-align: center;
+}
+
+#contactDescription {
+	font-family: BebasNeueBook;
+	font-size: 1.5vw;
+	color: black;
+	text-align: center;
+}
+
+.contactForm {
+	font-family: 'Lato', sans-serif;
+	color: black;
+	text-align: center;
+}
+
+.formTitles {
+	font-family: BebasNeueBook;
+	font-size: 1.7vw;
+	font-weight: normal;
+}
+
+input[type=text], [type=email], textarea {
+	width: 100%;
+	padding: 12px;  
+	border: 1px solid #ccc;
+	border-radius: 4px; 
+	box-sizing: border-box; 
+	margin-top: 6px; 
+	margin-bottom: 16px; 
+	resize: vertical;
+}
+
+textarea {
+	width: 50%;
+}
+
+input[type=submit] {
+	background-color: #107896;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #107866;
 }
 
 .timeline {
-	background-color: white;
+	width: 100%;
+}
+
+#experienceTitle {
+	font-family: BebasNeueRegular;
+	font-size: 4vw;
+	color: black;
+	text-align: center;
+}
+
+.cbp_tmtimeline li {
+	font-size: 110%;
 }
 
 .cbp_tmtimeline {
@@ -79,8 +527,8 @@ li {
 	top: 0;
 	bottom: 0;
 	width: 10px;
-	background: #afdcf8;
-	left: 17%;
+	background: #107896;
+	left: 16%;
 	margin-left: -10px;
 }
 
@@ -99,10 +547,11 @@ li {
 	position: relative;
 	border-radius: 5px;
 	width: 72%;
-}
+}	
 
 .cbp_tmtimeline > li .cbp_tmlabel h2 { 
-	font-family: 'Lato', sans-serif;
+	font-family: BebasNeueRegular;
+	font-size: 3vw;
 	margin-top: -5px;
 	padding: 0 0 5px 0;
 	border-bottom: 1px solid rgba(255,255,255,0.4);
@@ -132,81 +581,239 @@ li {
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
-	font-size: 1.4em;
+	font-size: 1.4vw;
 	line-height: 40px;
 	-webkit-font-smoothing: antialiased;
 	position: absolute;
-	background: #107896;
+	background: #0099cc;
 	border-radius: 50%;
-	box-shadow: 0 0 0 8px #afdcf8;
+	box-shadow: 0 0 0 8px #107896;
 	text-align: center;
-	left: 17%;
+	left: 16%;
 	top: 0;
 	margin: 0 0 0 -25px;
 }
 
+
 #date {
+	font-family: BebasNeueRegular;
+	font-size: 3vw;
 	position: relative;
 	float: right;
 	top: 0%;
-	font-family: 'Lato', sans-serif;
 	font-size: 1.15vw;
-	color: #107896;
+	color: black;
 	z-index: 100;
-	left: -85%;
+	left: -87%;
 }
 
 #dateContent {
-	font-family: 'Lato', sans-serif;
-	font-size: 1.2vw;
+	font-family: BebasNeueBook;
+	font-size: 2vw;
 	display: none;
 }
 
-#profilePicture {
-	position: relative;
-	float: left;
-	left: 20%;
-	width: 30%;
-}
-
-.profileBorder {
-	border-radius: 10%;
-	border-width: 3px;
-	border-style: solid;
-	border-color: #C0C0C0;
-}
-
-#aboutMeTitle {
-	padding-top: 10px;
-	text-align: center;
-}
-
 .downloadButton {
+	font-family: 'Lato', sans-serif;
+	font-size: 1.3em;
 	color: black;
 	background-color: transparent;
 	border-style: solid;
 	border-width: 2px;
-	border-color: black
-}
-
-#aboutMeDescription {
-	position: relative;
-	left: -12%;	
-}
-
-#workExperienceTitle {
-	padding-top: 10px;
-	text-align: center;
-}
-
-#projectsTitle {
-	padding-top: 20px;
-	text-align: center;
+	border-color: black;
+	border-radius: 50px;
 }
 
 #socialMedia {
 	position: relative;
 	top: 100%;
+}
+
+#dropdown {
+	position: relative;
+	top: 60%;
+	text-align: center;
+	color: black;
+}
+
+#desktop {
+	display: block;
+}
+
+#phone {
+	display: none;
+}
+
+#footer {
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+}
+
+#experienceFooter {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+}
+
+#technologiesUsed {
+	padding-top: 10px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px) and (orientation:portrait) {
+	#desktop {
+		display: none;
+	}
+
+	#phone {
+		display: block;
+	}
+
+	.navigationIcon {
+		display: block;
+	}
+
+	.navigationBar {
+		display: none;
+	}
+
+	.formTitles {
+		font-size: 4vw;
+	}
+
+	#contactTitle {
+		font-size: 7vw;
+	}
+
+	#contactDescription {
+		font-size: 3.6vw;
+	}
+
+	#experienceTitle {
+		font-size: 7vw;
+	}
+
+	#aboutTitle {
+		font-size: 7vw;
+	}
+
+	.cbp_tmtimeline > li .cbp_tmlabel h2 { 
+		font-size: 5vw;
+	}
+
+	#dateContent {
+		font-size: 4vw;
+	}
+
+	.cbp_tmtimeline li {
+		font-size: 2.5vw;
+	}
+
+	#technlogiesUsed {
+		font-size: 2vw;
+	}
+
+	#profileBorder {
+		width: 30vw;
+		height: 30vw;
+		left: 36%;
+	}
+
+	#factDescription {
+		font-size: 4vw;
+	}
+
+	#modal-title {
+		font-size: 5vw;
+	}
+
+	#modal-body {
+		font-size: 3vw;
+	}
+
+	#modal-button {
+		font-size: 2.5vw;
+		border-radius: 10px;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px) and (orientation:landscape) {
+	#desktop {
+		display: none;
+	}
+
+	#phone {
+		display: block;
+	}
+	
+	.navigationIcon {
+		display: block;
+	}
+
+	.navigationBar {
+		display: none;
+	}
+
+	.formTitles {
+		font-size: 4vw;
+	}
+
+	#contactTitle {
+		font-size: 7vw;
+	}
+
+	#contactDescription {
+		font-size: 3.6vw;
+	}
+
+	#experienceTitle {
+		font-size: 7vw;
+	}
+
+	#aboutTitle {
+		font-size: 7vw;
+	}
+
+	.cbp_tmtimeline > li .cbp_tmlabel h2 { 
+		font-size: 5vw;
+	}
+
+	#dateContent {
+		font-size: 4vw;
+	}
+
+	.cbp_tmtimeline li {
+		font-size: 2.5vw;
+	}
+
+	#technlogiesUsed {
+		font-size: 2vw;
+	}
+
+	#profileBorder {
+		width: 30vw;
+		height: 30vw;
+		left: 36%;
+	}
+
+	#factDescription {
+		font-size: 4vw;
+	}
+	
+	#modal-title {
+		font-size: 5vw;
+	}
+
+	#modal-body {
+		font-size: 3vw;
+	}
+
+	#modal-button {
+		font-size: 2.5vw;
+		border-radius: 10px;
+	}
 }
 
 @media screen and (min-width: 0px) and (max-width: 1552px) and (orientation:portrait) {
@@ -218,8 +825,10 @@ li {
 		display: block;
 	}
 
-	.background {
-		height: 50%;
+	#profileBorder {
+		width: 30vw;
+		height: 30vw;
+		left: 35.4%;
 	}
 }
 
@@ -231,8 +840,16 @@ li {
 	#dateContent {
 		display: block;
 	}
+}
 
-	.background {
-		height: 80%;
+@media screen and (min-width: 1000px) and (orientation: landscape) {
+	.navigationMenu {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1000px) and (orientation: landscape) {
+	.navigationMenu {
+		display: none;
 	}
 }
