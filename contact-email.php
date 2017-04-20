@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['email'])) {
+if(isset($_GET['email'])) {
     $email_to = "wang.yw.william@gmail.com";
     $email_subject = "Message from willywwang.github.io";
  
@@ -8,17 +8,17 @@ if(isset($_POST['email'])) {
         die();
     }
  
-    if(!isset($_POST['username']) ||
-        !isset($_POST['email']) ||
-        !isset($_POST['messages'])) {
+    if(!isset($_GET['username']) ||
+        !isset($_GET['email']) ||
+        !isset($_GET['messages'])) {
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
  
      
  
-    $name = $_POST['username']; // required
-    $email_from = $_POST['email']; // required
-    $messages = $_POST['messages']; // required
+    $name = $_GET['username']; // required
+    $email_from = $_GET['email']; // required
+    $messages = $_GET['messages']; // required
  
     $error_message = "";
  

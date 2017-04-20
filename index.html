@@ -383,14 +383,15 @@
 							<hr/>
 							<h3 id="contactDescription">Not a fan of forms? Send me an e-mail at <b>wang.yw.william@gmail.com</b> and I'll get back to you as soon as possible.</h3>
 							<br/>
-							<form class="contactForm" method="post" action="contact-email.php">
+							<form class="contactForm" method="get" action="contact-email.php">
 								<label for="username"><p class="formTitles">Name:</p>
 									<input style="font-weight: normal" type="text" name="username" placeholder="Enter name here" ng-model="user.name" required/></label><br>
 									<label for="email"><p class="formTitles"">E-mail:</p> 
 										<input style="font-weight: normal" type="email" name="email" placeholder="Enter valid email here"" ng-model="user.email" required/></label><br/>
 										<label for="messages" class="formTitles"> Message: </label>
 										<br/>
-										<textarea type="message" placeholder="Enter message here" name="messages" style="height: 10vw" ng-model="user.message" required/></textarea>
+										<textarea maxlength="1750" type="message" placeholder="Enter message here. Max length of 1750 characters." name="messages" style="height: 10vw" ng-model="user.message" required/></textarea>
+										<p class="formTitles">Message Length: {{user.message.length}}</p>
 										<br/>
 										<input type="submit" value="Submit" />
 									</form>
