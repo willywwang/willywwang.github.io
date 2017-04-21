@@ -1,6 +1,6 @@
 var website = angular.module('website', ['ui.bootstrap']);
 
-website.controller('web-controller', function($scope, $interval, $uibModal) {
+website.controller('web-controller', function($scope, $window, $interval, $uibModal) {
 	// set defaults
 	$scope.androidProjectShow="true";
 	$scope.pythonProjectShow="true";
@@ -10,6 +10,10 @@ website.controller('web-controller', function($scope, $interval, $uibModal) {
 	// open mobile menu
 	$scope.openMobileMenu = function() {
 		$scope.mobileMenuClicked = !$scope.mobileMenuClicked;
+	}
+
+	$scope.closeMobileMenu = function() {
+		$scope.mobileMenuClicked = false;
 	}
 
 	// open android modal
@@ -74,9 +78,9 @@ website.controller('web-controller', function($scope, $interval, $uibModal) {
 	$interval(rotateWords, 1000);
 });
 
-website.controller('modal-controller', function($scope, $rootScope, $uibModalInstance) {
-	$scope.close = function() {
-		$rootScope.$broadcast('modal-closed');
-		$uibModalInstance.dismiss('close');
-	}
-});
+		website.controller('modal-controller', function($scope, $rootScope, $uibModalInstance) {
+			$scope.close = function() {
+				$rootScope.$broadcast('modal-closed');
+				$uibModalInstance.dismiss('close');
+			}
+		});
