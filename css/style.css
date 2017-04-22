@@ -122,6 +122,15 @@ i:hover {
 	color: black;
 }
 
+#divMobileMenu {
+	min-width: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0%;
+	top: 71px;
+	z-index: 1
+}
+
 .mobileMenuButton {
 	background-color: transparent;
 	border-style: solid;
@@ -163,10 +172,11 @@ i:hover {
 
 .navigationMenu {
 	overflow-x: hidden;
-	position: absolute;
-	top: 72px;
-	left: -7%;
 	z-index: 1;
+}
+
+.navigationMenu ul {
+	-webkit-padding-start: 0;
 }
 
 .navigationMenu ul li {
@@ -177,6 +187,7 @@ i:hover {
 	width: 100vw;
 	min-width: 100%;
 	list-style: none;
+	text-align: left;
 	text-decoration: none;
 	padding: 10px;
 	font-size: 20px;
@@ -675,20 +686,6 @@ input[type=submit]:hover {
 	height: 10vw;
 }
 
-@media screen and (min-width: 0px) and (max-width: 1000px)
-{
-	.navigationMenu {
-		left: -4%;
-	}
-}
-
-@media screen and (min-width: 0px) and (max-width: 500px)
-{
-	.navigationMenu {
-		left: -9%;	
-	}
-}
-
 @media screen and (min-width: 0px) and (max-width: 450px)
 {
 	#name {
@@ -703,10 +700,6 @@ input[type=submit]:hover {
 
 	.cbp_tmtimeline > li .cbp_tmicon {
 		left: 12%;
-	}
-
-	.navigationMenu {
-		left: -7%;
 	}
 }
 

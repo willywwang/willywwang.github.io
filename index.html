@@ -24,21 +24,21 @@
 	<body>
 		<div class="container-fluid" ng-app="website" ng-controller="web-controller">
 			<div class="background">
+				<div class="navigationIcon">
+					<button ng-click="openMobileMenu()" class="mobileMenuButton">
+						<i style="color: black" class="glyphicon glyphicon-menu-hamburger"></i>
+					</button>
+				</div>
 				<!-- Mobile Menu -->
 				<div id="divMobileMenu">
-					<div class="navigationIcon">
-						<button ng-click="openMobileMenu()" class="mobileMenuButton">
-							<i style="color: black" class="glyphicon glyphicon-menu-hamburger"></i>
-						</button>
+					<div ng-show="mobileMenuClicked" class="navigationMenu" id="mobileMenu">
+						<ul>
+							<a href="index.html" ng-click="closeMobileMenu()"><li>Home</li></a>
+							<a href="#scrollArea" ng-click="closeMobileMenu()"><li>About</li></a>
+							<a href="#timeline" ng-click="closeMobileMenu()"><li>Experience</li></a> 
+							<a href="#contact" ng-click="closeMobileMenu()"><li>Contact</li></a>
+						</ul>
 					</div>
-				</div>
-				<div ng-show="mobileMenuClicked" class="navigationMenu" id="mobileMenu">
-					<ul>
-						<a href="index.html" ng-click="closeMobileMenu()"><li>Home</li></a>
-						<a href="#scrollArea" ng-click="closeMobileMenu()"><li>About</li></a>
-						<a href="#timeline" ng-click="closeMobileMenu()"><li>Experience</li></a> 
-						<a href="#contact" ng-click="closeMobileMenu()"><li>Contact</li></a>
-					</ul>
 				</div>
 				<!-- Navigation bar on Desktop -->
 				<div id="navLine"></div>
