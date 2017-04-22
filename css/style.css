@@ -13,8 +13,13 @@
 html, body {
 	margin-top: -40;
 	padding: 0;
-	overflow-x: hidden;
-	width: 100%;
+	overflow-x: hidden !important;
+	width: 100% !important;
+	max-width: 100%;
+}
+
+body {
+	overflow: hidden;
 }
 
 h1, h2, h3, h4, p {
@@ -160,7 +165,8 @@ i:hover {
 	overflow-x: hidden;
 	position: absolute;
 	top: 72px;
-	left: -4%;
+	left: -7%;
+	z-index: 1;
 }
 
 .navigationMenu ul li {
@@ -665,6 +671,45 @@ input[type=submit]:hover {
 	padding-top: 10px;
 }
 
+#contactMessage {
+	height: 10vw;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px)
+{
+	.navigationMenu {
+		left: -4%;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 500px)
+{
+	.navigationMenu {
+		left: -9%;	
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px)
+{
+	#name {
+		line-height: 80%;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 700px) {
+	.cbp_tmtimeline:before {
+		left: 12%;
+	}
+
+	.cbp_tmtimeline > li .cbp_tmicon {
+		left: 12%;
+	}
+
+	.navigationMenu {
+		left: -7%;
+	}
+}
+
 @media screen and (min-width: 0px) and (max-width: 1000px) and (orientation:portrait) {
 	#desktop {
 		display: none;
@@ -753,6 +798,11 @@ input[type=submit]:hover {
 	.glyphicon-menu-hamburger {
 		font-size: 23px;
 	}
+
+	#contactMessage {
+		height: 20vw;
+		width: 50vw;
+	}
 }
 
 @media screen and (min-width: 0px) and (max-width: 1000px) and (orientation:landscape) {
@@ -829,6 +879,11 @@ input[type=submit]:hover {
 	#modal-button {
 		font-size: 2.5vw;
 		border-radius: 10px;
+	}
+
+	#contactMessage {
+		height: 20vw;
+		width: 50vw;
 	}
 }
 

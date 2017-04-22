@@ -14,6 +14,7 @@
 
 	<!DOCTYPE html>
 	<html>
+	<meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no"">
 	<head>
 		<link rel="shortcut icon" type="image/x-icon" href="assets/website-logo.jpg"/>
 		<title>
@@ -30,14 +31,14 @@
 							<i style="color: black" class="glyphicon glyphicon-menu-hamburger"></i>
 						</button>
 					</div>
-					<div ng-show="mobileMenuClicked" class="navigationMenu" id="mobileMenu">
-						<ul>
-							<a href="index.html" ng-click="closeMobileMenu()"><li>Home</li></a>
-							<a href="#scrollArea" ng-click="closeMobileMenu()"><li>About</li></a>
-							<a href="#timeline" ng-click="closeMobileMenu()"><li>Experience</li></a> 
-							<a href="#contact" ng-click="closeMobileMenu()"><li>Contact</li></a>
-						</ul>
-					</div>
+				</div>
+				<div ng-show="mobileMenuClicked" class="navigationMenu" id="mobileMenu">
+					<ul>
+						<a href="index.html" ng-click="closeMobileMenu()"><li>Home</li></a>
+						<a href="#scrollArea" ng-click="closeMobileMenu()"><li>About</li></a>
+						<a href="#timeline" ng-click="closeMobileMenu()"><li>Experience</li></a> 
+						<a href="#contact" ng-click="closeMobileMenu()"><li>Contact</li></a>
+					</ul>
 				</div>
 				<!-- Navigation bar on Desktop -->
 				<div id="navLine"></div>
@@ -397,7 +398,7 @@
 									<input style="font-weight: normal" type="email" name="email" placeholder="Enter valid email here"" ng-model="user.email" required/></label><br/>
 									<label for="messages" class="formTitles"> Message: </label>
 									<br/>
-									<textarea maxlength="1750" type="message" placeholder="Enter message here. Max length of 1750 characters." name="messages" style="height: 10vw" ng-model="user.message" required/></textarea>
+									<textarea maxlength="1750" type="message" placeholder="Enter message here. Max length of 1750 characters." name="messages" id="contactMessage" ng-model="user.message" required/></textarea>
 									<p class="formTitles">Message Length: {{user.message.length}}</p>
 									<br/>
 									<input type="submit" value="Submit"/>
