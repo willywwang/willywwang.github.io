@@ -675,6 +675,10 @@ input[type=submit]:hover {
 	color: black;
 }
 
+#dropdown a:hover {
+	color: black;
+}
+
 #desktop {
 	display: block;
 }

@@ -34,32 +34,34 @@
 	<body>
 		<div class="container-fluid" ng-app="website" ng-controller="web-controller">
 			<div class="background" id="landing">
-				<div class="navigationIcon">
-					<button ng-click="openMobileMenu()" class="mobileMenuButton">
-						<i style="color: black" class="glyphicon glyphicon-menu-hamburger"></i>
-					</button>
-				</div>
-				<!-- Mobile Menu -->
-				<div id="divMobileMenu">
-					<div ng-show="mobileMenuClicked" class="navigationMenu" id="mobileMenu">
-						<ul>
-							<a class="homeScroll" href="#landing" ng-click="closeMobileMenu()"><li>Home</li></a>
-							<a class="aboutScroll" href="#scrollArea" ng-click="closeMobileMenu()"><li>About</li></a>
-							<a class="experienceScroll" href="#timeline" ng-click="closeMobileMenu()"><li>Experience</li></a> 
-							<a class="contactScroll" href="#contact" ng-click="closeMobileMenu()"><li>Contact</li></a>
-						</ul>
+				<div ng-mouseleave="mobileMenuClicked=false">
+					<div class="navigationIcon">
+						<button ng-click="openMobileMenu()" class="mobileMenuButton">
+							<i style="color: black" class="glyphicon glyphicon-menu-hamburger"></i>
+						</button>
 					</div>
+					<!-- Mobile Menu -->
+					<div id="divMobileMenu">
+						<div ng-show="mobileMenuClicked" class="navigationMenu" id="mobileMenu">
+							<ul>
+								<a class="homeScroll" href="#landing" ng-click="closeMobileMenu()"><li>Home</li></a>
+								<a class="aboutScroll" href="#scrollArea" ng-click="closeMobileMenu()"><li>About</li></a>
+								<a class="experienceScroll" href="#timeline" ng-click="closeMobileMenu()"><li>Experience</li></a> 
+								<a class="contactScroll" href="#contact" ng-click="closeMobileMenu()"><li>Contact</li></a>
+							</ul>
+						</div>
+					</div>
+					<!-- Navigation bar on Desktop -->
+					<div id="navLine"></div>
+					<div class="navigationBar">
+						<ul>
+							<li><a class="homeScroll" href="#landing">Home</a></li>	
+							<li><a class="aboutScroll" href="#scrollArea">About</a></li>
+							<li><a class="experienceScroll" href="#timeline">Experience</a></li>
+							<li><a class="contactScroll" href="#contact">Contact</a></li>
+						</ul>
+					</div>	
 				</div>
-				<!-- Navigation bar on Desktop -->
-				<div id="navLine"></div>
-				<div class="navigationBar">
-					<ul>
-						<li><a class="homeScroll" href="#landing">Home</a></li>	
-						<li><a class="aboutScroll" href="#scrollArea">About</a></li>
-						<li><a class="experienceScroll" href="#timeline">Experience</a></li>
-						<li><a class="contactScroll" href="#contact">Contact</a></li>
-					</ul>
-				</div>	
 				<div id="landingInfo">
 					<div id="landingTitles">
 						<h1 id="name">WILLIAM WANG</h1>
