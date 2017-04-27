@@ -675,10 +675,6 @@ input[type=submit]:hover {
 	color: black;
 }
 
-#dropdown a:hover {
-	color: black;
-}
-
 #desktop {
 	display: block;
 }
@@ -758,6 +754,10 @@ input[type=submit]:hover {
 
 	#phone {
 		display: block;
+	}
+
+	#dropdown a:hover {
+		color: black;
 	}
 
 	.navigationIcon {
@@ -853,6 +853,10 @@ input[type=submit]:hover {
 
 	#phone {
 		display: block;
+	}
+
+	#dropdown a:hover {
+		color: black;
 	}
 	
 	.navigationIcon {
