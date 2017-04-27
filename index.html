@@ -1,11 +1,12 @@
 	<!-- Third party dependencies --> 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-	<script src="https://use.fontawesome.com/467031236f.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"></script>
 
 	<!-- CSS and AngularJS files -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -17,13 +18,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no"">
 	<head>	
 		<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-			  ga('create', 'UA-97872558-1', 'auto');
-			  ga('send', 'pageview');
+			ga('create', 'UA-97872558-1', 'auto');
+			ga('send', 'pageview');
 		</script>
 		<link rel="shortcut icon" type="image/x-icon" href="assets/website-logo.jpg"/>
 		<title>
@@ -32,7 +33,7 @@
 	</head>
 	<body>
 		<div class="container-fluid" ng-app="website" ng-controller="web-controller">
-			<div class="background">
+			<div class="background" id="landing">
 				<div class="navigationIcon">
 					<button ng-click="openMobileMenu()" class="mobileMenuButton">
 						<i style="color: black" class="glyphicon glyphicon-menu-hamburger"></i>
@@ -42,10 +43,10 @@
 				<div id="divMobileMenu">
 					<div ng-show="mobileMenuClicked" class="navigationMenu" id="mobileMenu">
 						<ul>
-							<a href="index.html" ng-click="closeMobileMenu()"><li>Home</li></a>
-							<a href="#scrollArea" ng-click="closeMobileMenu()"><li>About</li></a>
-							<a href="#timeline" ng-click="closeMobileMenu()"><li>Experience</li></a> 
-							<a href="#contact" ng-click="closeMobileMenu()"><li>Contact</li></a>
+							<a class="homeScroll" href="#landing" ng-click="closeMobileMenu()"><li>Home</li></a>
+							<a class="aboutScroll" href="#scrollArea" ng-click="closeMobileMenu()"><li>About</li></a>
+							<a class="experienceScroll" href="#timeline" ng-click="closeMobileMenu()"><li>Experience</li></a> 
+							<a class="contactScroll" href="#contact" ng-click="closeMobileMenu()"><li>Contact</li></a>
 						</ul>
 					</div>
 				</div>
@@ -53,26 +54,30 @@
 				<div id="navLine"></div>
 				<div class="navigationBar">
 					<ul>
-						<li><a href="index.html">Home</a></li>	
-						<li><a href="#scrollArea">About</a></li>
-						<li><a href="#timeline">Experience</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a class="homeScroll" href="#landing">Home</a></li>	
+						<li><a class="aboutScroll" href="#scrollArea">About</a></li>
+						<li><a class="experienceScroll" href="#timeline">Experience</a></li>
+						<li><a class="contactScroll" href="#contact">Contact</a></li>
 					</ul>
 				</div>	
 				<div id="landingInfo">
-					<h1 id="name">WILLIAM WANG</h1>
-					<h2 id="description">UBC COMPUTER SCIENCE</h2>
-					<h2 id="nouns">{{noun}}</h2>
-					<a href="assets/Resume.pdf" target="_blank">
-						<button class="downloadButton">
-							<i style="color: black" class="glyphicon glyphicon-download"></i>&nbsp;&nbsp;Download Resume
-						</button>
-					</a>
-					<h2></h2>
-					<span id="socialMedia">
-						<a href="https://www.linkedin.com/in/williamywang" target="_blank"><i style="color: black" class="fa fa-4x fa-linkedin-square"></i>&nbsp;&nbsp;</a>
-						<a href="https://github.com/willywwang/" target="_blank"><i style="color: black" class="fa fa-4x fa-github-square"></i></a>
-					</span>
+					<div id="landingTitles">
+						<h1 id="name">WILLIAM WANG</h1>
+						<h2 id="description">UBC COMPUTER SCIENCE</h2>
+						<h2 id="nouns"></h2>
+					</div>
+					<div id="landingButtons">
+						<a href="assets/Resume.pdf" target="_blank">
+							<button class="downloadButton">
+								<i style="color: black" class="glyphicon glyphicon-download"></i>&nbsp;&nbsp;Download Resume
+							</button>
+						</a>
+						<div class="buttonGap"></div>	
+						<span id="socialMedia">
+							<a href="https://www.linkedin.com/in/williamywang" target="_blank"><i style="color: black" class="fa fa-4x fa-linkedin-square"></i>&nbsp;&nbsp;</a>
+							<a href="https://github.com/willywwang/" target="_blank"><i style="color: black" class="fa fa-4x fa-github-square"></i></a>
+						</span>
+					</div>
 				</div>
 				<div id="dropdown">
 					<a class="scrollAnimation" href="#scrollArea"><i class="fa fa-4x fa-chevron-circle-down"></i></a>
@@ -397,7 +402,7 @@
 					<div class="col-xs-6">
 						<h1 id="contactTitle">CONTACT ME</h1>
 						<hr/>
-						<h3 id="contactDescription">Not a fan of forms? Send me an e-mail at <b>wang.yw.william@gmail.com</b> and I'll get back to you as soon as possible.
+						<h3 id="contactDescription">Not a fan of forms? Send me an e-mail at <b>wang.yw.william@gmail.com</b> and I'll get back to you as soon as possible. Let's collaborate and create something awesome!
 						</h3>
 						<br/>
 						<form class="contactForm" action="https://formspree.io/wang.yw.william@gmail.com" method="POST">
@@ -408,7 +413,7 @@
 									<label for="messages" class="formTitles"> Message: </label>
 									<br/>
 									<textarea maxlength="1750" type="message" placeholder="Enter message here. Max length of 1750 characters." name="messages" id="contactMessage" ng-model="user.message" required/></textarea>
-									<p class="formTitles">Message Length: {{user.message.length}}</p>
+									<p class="formTitles">Message Length: {{user.message.length}}/1750</p>
 									<br/>
 									<input type="submit" value="Submit"/>
 								</form>

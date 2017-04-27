@@ -97,8 +97,9 @@ i:hover {
 #landingInfo {
 	position: relative;
 	width: 100%;
-	top: 33%;
+	top: 31%;
 	text-align: center;
+	height: 69%;
 }
 
 #name {
@@ -633,6 +634,24 @@ input[type=submit]:hover {
 	display: none;
 }
 
+#landingTitles {
+	width: 100%;
+	top: 5%;
+	position: absolute;
+	text-align: center;
+}
+
+#landingButtons {
+	width: 100%;
+	top: 17em;
+	position: relative;
+	text-align: center;
+}
+
+.buttonGap {
+	height: 15px;
+}
+
 .downloadButton {
 	font-family: 'Lato', sans-serif;
 	font-size: 1.3em;
@@ -688,6 +707,27 @@ input[type=submit]:hover {
 
 #fact > i:hover {
 	cursor: default;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1830px)
+{
+	#landingButtons {
+		top: 18em;
+	}
+}
+
+@media screen and (min-width: 770px) and (max-width: 1110px)
+{
+	#landingButtons {
+		top: 18em;
+	}
+}
+
+@media screen and (min-width: 1110px) and (max-width: 1462px)
+{
+	#landingButtons {
+		top: 19em;
+	}
 }
 
 @media screen and (min-width: 0px) and (max-width: 450px)

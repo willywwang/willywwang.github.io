@@ -78,9 +78,9 @@ website.controller('web-controller', function($scope, $window, $interval, $uibMo
 	$interval(rotateWords, 1000);
 });
 
-		website.controller('modal-controller', function($scope, $rootScope, $uibModalInstance) {
-			$scope.close = function() {
-				$rootScope.$broadcast('modal-closed');
-				$uibModalInstance.dismiss('close');
-			}
-		});
+website.controller('modal-controller', function($scope, $rootScope, $uibModalInstance) {
+	$scope.close = function() {
+		$rootScope.$broadcast('modal-closed');
+		$uibModalInstance.dismiss('close');
+	}
+});
