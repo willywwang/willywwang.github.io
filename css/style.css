@@ -144,9 +144,10 @@ i:hover {
 .navigationBar {
 	position: absolute;
 	top: 0%;
-	left: 7%;
-	height: 40px;
-	width: auto;
+	left: 0%;
+	height: 45px;
+	width: 100%;
+	background-color: black;
 }
 
 .navigationBar ul li {
@@ -162,7 +163,7 @@ i:hover {
 
 .navigationBar ul li a { 
 	text-decoration: none;
-	color: black;
+	color: white;
 }
 .navigationBar ul li a:hover {
 	color: #107896;
