@@ -1,4 +1,4 @@
-All code is owned by William Wang. Images are owned by their respective owners.
+Website now deprecated. Please visit www.will-wang.ca for newest prototype.
 
 CURRENT VERSION: 1.1.01
 
